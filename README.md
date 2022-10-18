@@ -26,7 +26,7 @@ In C++, scope resolution operator is ```::``` it is used for to define a functio
 bool Lista<T>::insertOnList(T dato, int pos)
 ```
 
-## Desarrolladores
+## Developers
 * Jhonatan David Moreno Barragan.
 * Santiago Nicolas Ávila Gomez.
 
