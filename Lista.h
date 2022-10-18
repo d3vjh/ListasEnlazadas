@@ -62,15 +62,14 @@ bool Lista<T>::insertar(T dato, int pos){
 			tam++;
 //			return true;
 			}
-//			else if(pos==tam){
-//				aux=cab;
-//				for(int i=1; i<pos-1; i++){
-//				aux = aux->sig;
-//				aux2 = aux-> sig;
-//				nn->sig=aux2;}
-//				aux->sig=nn;
-//				tam++;
-//				}
+			else if(pos==2){
+				aux=cab; //esto está apuntando a 12 
+				for(int i=1; i<pos; i++){
+				nn->sig=aux->sig;
+				aux->sig=nn;
+				}
+				tam++;
+				}
 			else{
 				aux=cab;
 				for(int i=1; i<pos-1; i++){
@@ -97,11 +96,25 @@ bool Lista<T>::insertar(T dato, int pos){
 
 template <class T>
 bool Lista<T>::eliminar(int pos){ //pos 3 - guardar el anterior y el de adelante, y el anterior->adelante
-	
 	Nodo<T> *aux = new Nodo<T>;
 	Nodo<T> *aux2 = new Nodo<T>;
 	aux = cab;
 	
+	if(pos==1){
+		cab=aux->sig;
+		tam--;
+	}else if(pos>tam+1){
+		return false;
+	}
+	else if(pos==2){
+		aux = aux->sig;
+		cab->sig=aux->sig;
+		tam--;
+		return true;
+	}
+	
+	else{
+		
 	for(int i=1; i<pos-1; i++){
 		aux = aux->sig;
 		aux2 = aux-> sig;
@@ -109,6 +122,10 @@ bool Lista<T>::eliminar(int pos){ //pos 3 - guardar el anterior y el de adelante
 		aux2=aux2->sig;
 		aux->sig=aux2;
 		tam--;
+			
+	}
+
+	
 	
 }
 //
@@ -131,7 +148,7 @@ void Lista<T>::ordenar(){
 	Nodo<T> *aux2 = new Nodo<T>;
 	
 	int i, j;
-    int actual;
+    T actual;
  	aux=cab;
  	aux2=cab;
  	T arr[tam];
