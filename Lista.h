@@ -27,7 +27,7 @@ class Lista{Nodo<T>*cab = new Nodo<T>;
 			bool deleteFromList(int pos);
 			T printList();
 			void sortList();
-			static mergeLists(Lista a, Lista b, int N);
+//			static mergeLists(Lista a, Lista b, int N);
 //			~Lista();
 
 	};
@@ -219,76 +219,76 @@ void Lista<T>::sortList(){
 	}
 }
 
-template <class T>
-static Lista<T>::mergeLists(Lista a, Lista b, int N){
-	
-	Nodo<T> *aux = new Nodo<T>;
-	Nodo<T> *aux2 = new Nodo<T>;
-	Nodo<T> *aux3 = new Nodo<T>;
-	Nodo<T> *aux4 = new Nodo<T>;
-	
-	int i, j;
- 	aux=a->cab;
- 	aux2=a->cab;
- 	T arr[N];
- 	
- 	aux3=b->cab;
- 	aux4=b->cab;
- 	T arr2[N];
- 	
- 	T actual;
- 	
- 	
- 	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo
- 		arr[i]=aux->info;
- 		aux=aux->sig;
-	}
-
-	
-	for (i = 1; i <=N; i++) { //Ordena el arreglo
-        actual = arr[i];
-        for (j = i; j > 1 && arr[j - 1] > actual; j--) {
-            arr[j] = arr[j - 1];
-        }
-        arr[j] = actual;
-    }
-	
-
-	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo 1
- 		arr[i]=aux2->info;
- 		aux2=aux2->sig;
-	}
-	
-	///////////////////////////////////////////////
-	
-	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo
- 		arr2[i]=aux3->info;
- 		aux3=aux3->sig;
-	}
-
-	
-	for (i = 1; i <=N; i++) { //Ordena el arreglo
-        actual = arr2[i];
-        for (j = i; j > 1 && arr2[j - 1] > actual; j--) {
-            arr2[j] = arr2[j - 1];
-        }
-        arr2[j] = actual;
-    }
-	
-
-	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo 1
- 		arr2[i]=aux4->info;
- 		aux4=aux4->sig;
-	}
-	
-	aux=a->cab;
-	aux2=b->cab;
-	while(aux->sig!=NULL){
-		aux=aux->sig;
-	}
-	aux->sig = aux2;
-	
-}
+//template <class T>
+//static Lista<T>::mergeLists(Lista a, Lista b, int N){
+//	
+//	Nodo<T> *aux = new Nodo<T>;
+//	Nodo<T> *aux2 = new Nodo<T>;
+//	Nodo<T> *aux3 = new Nodo<T>;
+//	Nodo<T> *aux4 = new Nodo<T>;
+//	
+//	int i, j;
+// 	aux=a->cab;
+// 	aux2=a->cab;
+// 	T arr[N];
+// 	
+// 	aux3=b->cab;
+// 	aux4=b->cab;
+// 	T arr2[N];
+// 	
+// 	T actual;
+// 	
+// 	
+// 	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo
+// 		arr[i]=aux->info;
+// 		aux=aux->sig;
+//	}
+//
+//	
+//	for (i = 1; i <=N; i++) { //Ordena el arreglo
+//        actual = arr[i];
+//        for (j = i; j > 1 && arr[j - 1] > actual; j--) {
+//            arr[j] = arr[j - 1];
+//        }
+//        arr[j] = actual;
+//    }
+//	
+//
+//	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo 1
+// 		arr[i]=aux2->info;
+// 		aux2=aux2->sig;
+//	}
+//	
+//	///////////////////////////////////////////////
+//	
+//	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo
+// 		arr2[i]=aux3->info;
+// 		aux3=aux3->sig;
+//	}
+//
+//	
+//	for (i = 1; i <=N; i++) { //Ordena el arreglo
+//        actual = arr2[i];
+//        for (j = i; j > 1 && arr2[j - 1] > actual; j--) {
+//            arr2[j] = arr2[j - 1];
+//        }
+//        arr2[j] = actual;
+//    }
+//	
+//
+//	for(i=1; i<=N; i++){      //Guarda los info dentro del arreglo 1
+// 		arr2[i]=aux4->info;
+// 		aux4=aux4->sig;
+//	}
+//	
+//	aux=a->cab;
+//	aux2=b->cab;
+//	while(aux->sig!=NULL){
+//		aux=aux->sig;
+//	}
+//	aux->sig = aux2;
+//	
+//}
 
 
 #endif

@@ -2,12 +2,16 @@
 #ifndef PILA_H
 #define PILA_H
 
+#include "Lista.h"
+#include <cstddef>
+
 struct nodo{char dato;
         nodo *sig;
        };
 class Pila{
 	int *pila;
   	int p;
+  	
 	public:
 	  Pila (int max=100){
   	pila = new int[max]; p=0;}
@@ -24,5 +28,11 @@ class Pila{
 	}
 	inline int vacia(){
 	return !p;} 
+	
+	inline void mergeLists(Lista<int> a){
+		
+	
+		
+	}
 };
 #endif

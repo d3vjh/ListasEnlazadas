@@ -1,13 +1,16 @@
 #include <iostream>
 
 #include "Lista.h"
- 
+#include "Pila.cpp"
+#include <cstddef>
+
 using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
  
 int main(int argc, char** argv) {
 	Lista <int> enteros;
 	Lista <int> enteros2;
+	Pila p;
 	int N;
 	
 	cout<<"Ingrese el tamaño de la lista: ";
@@ -23,7 +26,7 @@ int main(int argc, char** argv) {
 		j--;
 	}
 	
-	Lista.mergeLists(enteros, enteros2, N);
+	p.mergeLists(enteros);
 	
 	
 	return 0;
